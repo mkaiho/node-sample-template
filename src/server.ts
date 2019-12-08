@@ -12,9 +12,9 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 
-function normalizePort(val: string) {
+function normalizePort(val: string): number {
   const PORT_STRING_PATTERN = /^[1-9][\d]*$/;
-  if (!PORT_STRING_PATTERN.test(val)) {
+  if (!PORT_STRING_PATTERN.test(val || '')) {
     return NaN;
   }
 
@@ -51,7 +51,7 @@ function onError(error: NodeJS.ErrnoException) {
 
 function onListening() {
   const addr = server.address();
-  let bind: string = '';
+  let bind = '';
   if (typeof addr === 'string') {
     bind = `pipe ${addr}`;
   } else if (addr) {
