@@ -8,7 +8,8 @@
     "airbnb-base",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -23,7 +24,8 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "@typescript-eslint/no-use-before-define": ["error", { "functions": false}]
+    "max-len":["error", {"code": 120}],
+    "@typescript-eslint/no-use-before-define": ["error", {"functions": false}]
   },
   "settings": {
     "import/resolver": {
